@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class PlayerFire : MonoBehaviour
 {
-    public GameObject firePosition;
-    public GameObject bombFactory;
-    public GameObject bulletEffect;
-    public GameObject fireEffect;
-    public GameObject bulletSound;
-    public GameObject reloadSound;
-    public GameObject firepos;
+    // public GameObject bulletSound;
+    // public GameObject reloadSound;
     public float damage;
 
     [HideInInspector] public float fireCooltime; // 발사 사이 딜레이 (= 연사속도)
@@ -18,7 +13,6 @@ public class PlayerFire : MonoBehaviour
     bool out_of_bullet; // 장전 필요성 판단
 
 
-    public float throwPower = 15f; // 수류탄 던지는 힘
     // Start is called before the first frame update
     void Start()
     {
@@ -33,21 +27,7 @@ public class PlayerFire : MonoBehaviour
 
         //Debug.Log("bullet = "+bullet);
         //Debug.Log("fireCooltime = " + fireCooltime);
-        Bomb();
         Shoot();
-    }
-    // 수류탄 발사
-    void Bomb()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            GameObject bomb = Instantiate(bombFactory);
-            bomb.transform.position = firePosition.transform.position;
-
-            Rigidbody rb = bomb.GetComponent<Rigidbody>();
-            rb.AddForce(Camera.main.transform.forward * throwPower, ForceMode.Impulse);
-        }
-
     }
 
     // 총알 발사
@@ -62,7 +42,7 @@ public class PlayerFire : MonoBehaviour
         {
             if (!out_of_bullet)
             {
-                reloadSound.gameObject.GetComponent<AudioSource>().Play();
+                //reloadSound.gameObject.GetComponent<AudioSource>().Play();
                 fireCooltime = 1.5f;
                 out_of_bullet = true;
             }
@@ -85,9 +65,7 @@ public class PlayerFire : MonoBehaviour
         {
             bullet--;
             fireCooltime = 0.1f;
-            GameObject sound = Instantiate(bulletSound);
-            GameObject fire = Instantiate(fireEffect);
-            fire.transform.position = firepos.transform.position;
+            //GameObject sound = Instantiate(bulletSound);
 
             //총알 발사 스크립트 : 실제 착탄 이미지
             Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
@@ -101,10 +79,7 @@ public class PlayerFire : MonoBehaviour
                 if(hitInfo.transform.gameObject.GetComponent<Health>() != null)
                     hitInfo.transform.gameObject.GetComponent<Health>().health-=damage;
 
-                GameObject bullet = Instantiate(bulletEffect);
                 Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red, 5f);
-                bullet.transform.position = hitInfo.point;
-                bullet.transform.forward = hitInfo.normal;
             }
         }
 
