@@ -11,4 +11,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01. Scenes/Map.unity
     guid: 1dc70c36e60b0ea4199c52ee8c09ee37
+  - enabled: 1
+    path: Assets/01. Scenes/ClearUI.unity
+    guid: 35addfddd5161fb4dabe1f185f9eb16b
+  - enabled: 1
+    path: Assets/01. Scenes/GameOverUI.unity
+    guid: e7d7ede54ea7dd2489cd1c998955288e
+  - enabled: 1
+    path: Assets/01. Scenes/In_game_UI.unity
+    guid: fc02aa57e9e12e84fabd71c1052e7e4a
+  - enabled: 1
+    path: Assets/01. Scenes/Prepabs test.unity
+    guid: 1f0d9b6a428c0a6478c15ee5ea147e7f
+  - enabled: 1
+    path: Assets/01. Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/01. Scenes/test.unity
+    guid: dfc9eb292e330c3439c10738e8b1f075
   m_configObjects: {}
