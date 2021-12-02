@@ -983,7 +983,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 1
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -1036,7 +1036,7 @@ ParticleSystem:
         m_RotationOrder: 4
     z:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 1
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -14312,3 +14312,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaitForSeconds: 1
+  isBomb: 0
