@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
     Animator ani;
-
+    
     private int bullet;
     // Start is called before the first frame update
     void Start()
@@ -25,8 +25,8 @@ public class PlayerAnimation : MonoBehaviour
             ani.SetBool("run", true);
         else
             ani.SetBool("run", false);
-
-        bullet = GetComponent<PlayerFire>().bullet;
+        GameObject g = transform.parent.gameObject;
+        bullet = g.GetComponent<PlayerFire>().bullet;
         if (Input.GetMouseButton(0) && bullet!=0)
             ani.SetTrigger("S");
         else

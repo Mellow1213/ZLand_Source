@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8180b3714da2e9947b26bd7cb8ca08ea, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
 --- !u!1 &705507993
@@ -427,6 +431,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotSpeed: 500
+--- !u!1 &1028061807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100060, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
+  m_PrefabInstance: {fileID: 205681313}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1028061809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028061807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 341f79bc6f6f5894f9fc12900fbdb99a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1056989408 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400060, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
@@ -444,7 +465,6 @@ GameObject:
   - component: {fileID: 1951487922}
   - component: {fileID: 1951487930}
   - component: {fileID: 1951487931}
-  - component: {fileID: 1951487925}
   - component: {fileID: 1951487926}
   - component: {fileID: 1951487929}
   - component: {fileID: 1951487928}
@@ -487,7 +507,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.66, z: 0}
+  m_Center: {x: 0, y: 1.02, z: 0}
 --- !u!4 &1951487924
 Transform:
   m_ObjectHideFlags: 0
@@ -504,18 +524,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1951487925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1951487921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 341f79bc6f6f5894f9fc12900fbdb99a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1951487926
 MonoBehaviour:
   m_ObjectHideFlags: 0
