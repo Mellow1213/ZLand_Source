@@ -6,9 +6,11 @@ public class PlayerFire : MonoBehaviour
 {
     public GameObject bulletSound;
     public GameObject reloadSound;
-    // public GameObject reloadSound;
+    public GameObject bulletEffect;
     public float damage;
 
+
+    ParticleSystem ps;
     [HideInInspector] public float fireCooltime; // 발사 사이 딜레이 (= 연사속도)
     [HideInInspector] public int bullet; // 남은 총알 갯수
     bool out_of_bullet; // 장전 필요성 판단
@@ -17,6 +19,7 @@ public class PlayerFire : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ps = bulletEffect.GetComponentInChildren<ParticleSystem>();
         out_of_bullet = false;
         bullet = 30;
         fireCooltime = 0f;
@@ -75,6 +78,9 @@ public class PlayerFire : MonoBehaviour
             if (Physics.Raycast(Camera.main.transform.position,
                 Camera.main.transform.forward, out hitInfo, 300f))
             {
+                GameObject gunEffect = Instantiate(bulletEffect);
+                gunEffect.transform.position = hitInfo.point;
+                ps.Play();
                 // 총알 맞은 적 체력 감소
                 // 총알 맞은 오브젝트가 Health 컴포넌트 보유 시에만 작동
                 if(hitInfo.transform.gameObject.GetComponent<Health>() != null)
