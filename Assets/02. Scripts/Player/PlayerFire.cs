@@ -9,6 +9,8 @@ public class PlayerFire : MonoBehaviour
     public GameObject bulletEffect;
     public float damage;
 
+    public GameObject firePos;
+
 
     ParticleSystem ps;
     [HideInInspector] public float fireCooltime; // 발사 사이 딜레이 (= 연사속도)
@@ -72,14 +74,15 @@ public class PlayerFire : MonoBehaviour
             GameObject sound = Instantiate(bulletSound);
 
             //총알 발사 스크립트 : 실제 착탄 이미지
-            Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+            Ray ray = new Ray(firePos.transform.position, Camera.main.transform.forward);
 
             RaycastHit hitInfo = new RaycastHit();
             if (Physics.Raycast(Camera.main.transform.position,
-                Camera.main.transform.forward, out hitInfo, 300f))
+                Camera.main.transform.forward, out hitInfo, 300f) && hitInfo.transform.gameObject.tag != "Player")
             {
                 GameObject gunEffect = Instantiate(bulletEffect);
                 gunEffect.transform.position = hitInfo.point;
+                gunEffect.transform.forward = hitInfo.normal;
                 ps.Play();
                 // 총알 맞은 적 체력 감소
                 // 총알 맞은 오브젝트가 Health 컴포넌트 보유 시에만 작동
