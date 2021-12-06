@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerFire : MonoBehaviour
 {
-    // public GameObject bulletSound;
+    public GameObject bulletSound;
+    public GameObject reloadSound;
     // public GameObject reloadSound;
     public float damage;
 
@@ -42,7 +43,7 @@ public class PlayerFire : MonoBehaviour
         {
             if (!out_of_bullet)
             {
-                //reloadSound.gameObject.GetComponent<AudioSource>().Play();
+                reloadSound.gameObject.GetComponent<AudioSource>().Play();
                 fireCooltime = 1.5f;
                 out_of_bullet = true;
             }
@@ -65,7 +66,7 @@ public class PlayerFire : MonoBehaviour
         {
             bullet--;
             fireCooltime = 0.1f;
-            //GameObject sound = Instantiate(bulletSound);
+            GameObject sound = Instantiate(bulletSound);
 
             //총알 발사 스크립트 : 실제 착탄 이미지
             Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
