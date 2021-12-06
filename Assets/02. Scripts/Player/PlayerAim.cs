@@ -19,7 +19,6 @@ public class PlayerAim : MonoBehaviour
     } 
     
     void Update() {
-        Debug.Log(target.position);
         if(Input.GetMouseButtonDown(1))
         { 
             Debug.Log("바라보기"); 

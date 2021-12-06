@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         cc.Move(dir * moveSpeed * Time.deltaTime);
 
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
-            moveSpeed = 10;
+            moveSpeed = 20;
         else
             moveSpeed = 7;
 

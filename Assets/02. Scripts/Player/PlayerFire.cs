@@ -10,8 +10,8 @@ public class PlayerFire : MonoBehaviour
     public float damage;
 
     public GameObject firePos;
-
-
+    Ray ray;
+    Transform start;
     ParticleSystem ps;
     [HideInInspector] public float fireCooltime; // 발사 사이 딜레이 (= 연사속도)
     [HideInInspector] public int bullet; // 남은 총알 갯수
@@ -30,7 +30,7 @@ public class PlayerFire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        start = firePos.transform;
         //Debug.Log("bullet = "+bullet);
         //Debug.Log("fireCooltime = " + fireCooltime);
         Shoot();
@@ -48,7 +48,7 @@ public class PlayerFire : MonoBehaviour
         {
             if (!out_of_bullet)
             {
-                reloadSound.gameObject.GetComponent<AudioSource>().Play();
+                GetComponent<AudioSource>().Play();
                 fireCooltime = 1.5f;
                 out_of_bullet = true;
             }
@@ -58,7 +58,6 @@ public class PlayerFire : MonoBehaviour
                 out_of_bullet = false;
             }
         }
-
         fireCooltime -= Time.deltaTime; // 딜레이
 
         // 총알이 한번 발사될 때 단위로 일어나는 스크립트
@@ -74,11 +73,10 @@ public class PlayerFire : MonoBehaviour
             GameObject sound = Instantiate(bulletSound);
 
             //총알 발사 스크립트 : 실제 착탄 이미지
-            Ray ray = new Ray(firePos.transform.position, Camera.main.transform.forward);
+            ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
 
             RaycastHit hitInfo = new RaycastHit();
-            if (Physics.Raycast(Camera.main.transform.position,
-                Camera.main.transform.forward, out hitInfo, 300f) && hitInfo.transform.gameObject.tag != "Player")
+            if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity))
             {
                 GameObject gunEffect = Instantiate(bulletEffect);
                 gunEffect.transform.position = hitInfo.point;
