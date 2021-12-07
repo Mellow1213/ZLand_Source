@@ -95,7 +95,7 @@ public class IngameUI : MonoBehaviour
         ammoN = playerfire.bullet;
         ammo.text = ammoN.ToString() + "/30";
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        /* if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             gunN = 1;
             gunNum.text = gunN.ToString();
@@ -109,7 +109,7 @@ public class IngameUI : MonoBehaviour
             gunNum.text = gunN.ToString();
             gunIcon.GetComponent<Image>().sprite = gun2;
             
-        }
+        } */
     }
 
     public void OnMouseOver_t() {

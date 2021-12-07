@@ -6,6 +6,9 @@ public class BarricadeGenerate : MonoBehaviour
 {
 
     public GameObject prefab;
+    public GameObject f;
+    int barriCount = 0;
+    int barriCountMax = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -16,12 +19,10 @@ public class BarricadeGenerate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftArrow)) {
-            this.transform.Translate(-0.1f, 0.0f, 0.0f);
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            this.transform.Translate(0.1f, 0.0f, 0.0f);
+        f = GameObject.FindWithTag("barri");
+        if (barriCount > barriCountMax) {
+            Destroy(f);
+            barriCount--;
         }
     }
 
@@ -29,6 +30,7 @@ public class BarricadeGenerate : MonoBehaviour
         GameObject player = GameObject.FindWithTag("Player");
         GameObject barri = Instantiate(prefab) as GameObject;
         barri.transform.position = player.transform.position;
+        barriCount++;
 
     }
 }
