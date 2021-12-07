@@ -71,6 +71,7 @@ public class EnemyMovement : MonoBehaviour
                 timer -= Time.deltaTime;
                 if (timer <= 0)
                 {
+                    GetComponent<AudioSource>().Play();
                     target.gameObject.GetComponent<Health>().health -= damage;
                     timer = attack_cooltime;
                     agent.enabled = false;

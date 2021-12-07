@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
             moveSpeed = 20;
         else
-            moveSpeed = 7;
+            moveSpeed = 11;
 
         if (cc.collisionFlags == CollisionFlags.Below)
         {
