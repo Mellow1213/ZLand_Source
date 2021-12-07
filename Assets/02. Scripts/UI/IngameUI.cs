@@ -23,6 +23,8 @@ public class IngameUI : MonoBehaviour
 
     Text gunNum, by, hp, ammo;
 
+    public Slider hpBar;
+
     int gunN, ammoN;
     GameObject gunIcon;
     public Sprite gun1, gun2;
@@ -101,6 +103,8 @@ public class IngameUI : MonoBehaviour
         hp.text = "HP "+ health.health.ToString("N0") + "/100";
 
         by.text = score.score.ToString();
+
+        hpBar.value = (float)health.health / 100;
 
         /* if (Input.GetKeyDown(KeyCode.Alpha1))
         {
