@@ -9,6 +9,10 @@ public class PlayerFire : MonoBehaviour
     public GameObject bulletEffect;
     public float damage;
 
+    public float throwPower = 15f;
+
+    public GameObject bombPos;
+    public GameObject bombFactory;
     public GameObject firePos;
     Ray ray;
     Transform start;
@@ -30,12 +34,24 @@ public class PlayerFire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Bomb();
         start = firePos.transform;
         //Debug.Log("bullet = "+bullet);
         //Debug.Log("fireCooltime = " + fireCooltime);
         Shoot();
     }
+    void Bomb()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            GameObject bomb = Instantiate(bombFactory);
+            bomb.transform.position = bombPos.transform.position;
 
+            Rigidbody rb = bomb.GetComponent<Rigidbody>();
+            rb.AddForce(Camera.main.transform.forward * throwPower, ForceMode.Impulse);
+        }
+
+    }
     // ÃÑ¾Ë ¹ß»ç
     void Shoot()
     {

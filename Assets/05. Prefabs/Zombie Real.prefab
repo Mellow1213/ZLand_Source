@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15945018152eebf4b97cc2942a444bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 15
 --- !u!1001 &4301464947931754367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62,6 +62,10 @@ PrefabInstance:
     - target: {fileID: 424839881549899813, guid: 4829ada4219d6e04c8b3db38c8e4498b, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 424839881549899814, guid: 4829ada4219d6e04c8b3db38c8e4498b, type: 3}
+      propertyPath: damage
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 424839881549899814, guid: 4829ada4219d6e04c8b3db38c8e4498b, type: 3}
       propertyPath: target

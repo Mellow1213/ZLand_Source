@@ -37,7 +37,7 @@ public class EventManager : MonoBehaviour
     {
         Debug.Log("Zombies : "+GameObject.FindGameObjectsWithTag("Enemy").Length);
         if (GameObject.FindGameObjectsWithTag("Enemy").Length > 15)
-            Destroy(GameObject.FindGameObjectsWithTag("Enemy")[14]);
+            Destroy(GameObject.FindGameObjectsWithTag("Enemy")[0]);
     }
 
     void Cursors()

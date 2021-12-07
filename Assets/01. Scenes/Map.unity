@@ -77410,9 +77410,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSound: {fileID: 4739180125641571015, guid: f0502c296b816c84da7fdfd50863f978, type: 3}
-  reloadSound: {fileID: 0}
+  reloadSound: {fileID: 1546078160}
   bulletEffect: {fileID: 2314308685279122571, guid: a76d79a229e7c024888728072a318c84, type: 3}
   damage: 2
+  throwPower: 15
+  bombPos: {fileID: 1546078160}
+  bombFactory: {fileID: 5955944057707697297, guid: 0fff814c85741804281b96aa99e81a88, type: 3}
   firePos: {fileID: 1546078160}
   fireCooltime: 0
   bullet: 0

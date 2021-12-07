@@ -19,7 +19,6 @@ public class DestroyParticle : MonoBehaviour {
 			&& other.gameObject.tag != "Player"
 			&& isBomb)
 			other.transform.gameObject.GetComponent<Health>().health -= 30f;
-
 	}
 
 
