@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 public class Ingame_EscUI : MonoBehaviour
 {
     GameObject tFlag;
+    EventManager score;
 
     // Start is called before the first frame update
     void Start()
     {
         tFlag = GameObject.Find("Panel");
         tFlag.gameObject.SetActive(false);
+        score = GameObject.Find("PlayerEvent").GetComponent<EventManager>();
     }
 
     // Update is called once per frame
@@ -31,6 +33,9 @@ public class Ingame_EscUI : MonoBehaviour
     public void OnClickUpgrade()
     {
         Debug.Log("업그레이드");
+        if (score.score >= 5) {
+            score.score = score.score - 5;
+        }
     }
 
     public void OnClickBack()

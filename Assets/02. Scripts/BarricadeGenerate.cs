@@ -9,11 +9,13 @@ public class BarricadeGenerate : MonoBehaviour
     public GameObject f;
     int barriCount = 0;
     int barriCountMax = 2;
+    EventManager score;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        score = GameObject.Find("PlayerEvent").GetComponent<EventManager>();
+
     }
 
     // Update is called once per frame
@@ -27,10 +29,13 @@ public class BarricadeGenerate : MonoBehaviour
     }
 
     public void OnclickBarricade() {
-        GameObject player = GameObject.FindWithTag("Player");
-        GameObject barri = Instantiate(prefab) as GameObject;
-        barri.transform.position = player.transform.position;
-        barriCount++;
-
+        if (score.score > 0)
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            GameObject barri = Instantiate(prefab) as GameObject;
+            barri.transform.position = player.transform.position;
+            barriCount++;
+            score.score--;
+        }
     }
 }
