@@ -4,10 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Item {
-    public enum ItemType { Boat, Call }
-    public ItemType itemType;
     public string name;
-    public bool check;
 }
 
 public class IngameUI : MonoBehaviour
@@ -19,7 +16,6 @@ public class IngameUI : MonoBehaviour
     Item[] citem = new Item[6];
 
     public Text t1, t2, t3, t4, t5, t6;
-    GameObject i1, i2, i3, i4, i5, i6;
 
     Text gunNum, by, hp, ammo;
 
@@ -50,7 +46,7 @@ public class IngameUI : MonoBehaviour
         hp = GameObject.Find("HP_Text").GetComponent<Text>();
         ammo = GameObject.Find("Ammunition").GetComponent<Text>();
 
-        tFlag = GameObject.Find("Turret info");
+        tFlag = GameObject.Find("Grenade info");
         tFlag.gameObject.SetActive(false);
         bFlag = GameObject.Find("Barricade info");
         bFlag.gameObject.SetActive(false);
@@ -61,14 +57,6 @@ public class IngameUI : MonoBehaviour
         for (int i = 0; i < bitem.Length; i++) {
             bitem[i] = new Item();
             citem[i] = new Item();
-        }
-
-        for (int i = 0; i < bitem.Length; i++)
-        {
-            //bitem[i].itemType = Boat;
-            bitem[i].check = false;
-            //citem[i].itemType = Call;
-            citem[i].check = false;
         }
 
         t1.text = bitem[0].name = "통나무";
@@ -85,13 +73,6 @@ public class IngameUI : MonoBehaviour
         citem[4].name = "마이크";
         citem[5].name = "망치";
 
-        i1 = GameObject.Find("Item_Image");
-        i2 = GameObject.Find("Item_Image(1)");
-        i3 = GameObject.Find("Item_Image(2)");
-        i4 = GameObject.Find("Item_Image(3)");
-        i5 = GameObject.Find("Item_Image(4)");
-        i6 = GameObject.Find("Item_Image(5)");
-
     }
 
     // Update is called once per frame
@@ -106,21 +87,6 @@ public class IngameUI : MonoBehaviour
 
         hpBar.value = (float)health.health / 100;
 
-        /* if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            gunN = 1;
-            gunNum.text = gunN.ToString();
-            gunIcon.GetComponent<Image>().sprite = gun1;
-            
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            gunN = 2;
-            gunNum.text = gunN.ToString();
-            gunIcon.GetComponent<Image>().sprite = gun2;
-            
-        } */
     }
 
     public void OnMouseOver_t() {
@@ -144,8 +110,6 @@ public class IngameUI : MonoBehaviour
 
     public void OnclickBoat() {
 
-        CheckItemImage();
-
         t1.text = bitem[0].name;
         t2.text = bitem[1].name;
         t3.text = bitem[2].name;
@@ -157,8 +121,6 @@ public class IngameUI : MonoBehaviour
 
     public void OnclickCall() {
 
-        CheckItemImage();
-
         t1.text = citem[0].name;
         t2.text = citem[1].name;
         t3.text = citem[2].name;
@@ -166,9 +128,5 @@ public class IngameUI : MonoBehaviour
         t5.text = citem[4].name;
         t6.text = citem[5].name;
 
-    }
-
-    public void CheckItemImage(){
-        i1.GetComponent<Image>().color = new Color(0, 0, 0, 0.5f);
     }
 }
