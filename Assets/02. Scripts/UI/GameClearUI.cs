@@ -9,28 +9,27 @@ public class GameClearUI : MonoBehaviour
 
     GameObject flag;
     Text k;
-    bool t;
+    EventManager end;
     EventManager kill;
 
     // Start is called before the first frame update
     void Start()
     {
         kill = GameObject.Find("PlayerEvent").GetComponent<EventManager>();
+        end = GameObject.Find("PlayerEvent").GetComponent<EventManager>();
         flag = GameObject.Find("Clear Canvas");
         flag.gameObject.SetActive(false);
-        t = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (t == true) {
+        if (end.gameEnd == true) {
             flag.gameObject.SetActive(true);
             k = GameObject.Find("kill").GetComponent<Text>();
+            k.text = "Kill: " + kill.kill.ToString();
             Time.timeScale = 0;
         }
-
-        k.text = "Kill: "+ kill.kill.ToString();
     }
 
     public void OnClickRestart()
