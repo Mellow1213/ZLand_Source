@@ -12,18 +12,19 @@ public class MaterialCs : MonoBehaviour
     void Start()
     {
         isHandle = false;
-        player = GameObject.Find("Soldier_demo");
+        player = GameObject.Find("Main Camera");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(player.transform.position, transform.position) <= 7f)
+        Debug.Log(Vector3.Distance(player.transform.position, transform.position));
+        if (Vector3.Distance(player.transform.position, transform.position) <= 10f)
             canLoot = true;
         else
             canLoot = false;
 
-        if(canLoot && Input.GetKeyDown(KeyCode.Q))
+        if(canLoot && Input.GetKeyDown(KeyCode.Q) && isSee())
         {
             if (!isHandle)
                 Loot();
@@ -34,14 +35,21 @@ public class MaterialCs : MonoBehaviour
 
     void Loot()
     {
+        GetComponent<Rigidbody>().isKinematic = true;
         isHandle = true;
         transform.SetParent(player.transform);
     }
 
     void UnLoot()
     {
+        GetComponent<Rigidbody>().isKinematic = false;
         isHandle = false;
         transform.parent = null;
     }
 
+    bool isSee()
+    {
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
+        return (viewPos.x > 0 && viewPos.x < 1 && viewPos.y > 0 && viewPos.y < 1 && viewPos.z > 0);
+    }
 }

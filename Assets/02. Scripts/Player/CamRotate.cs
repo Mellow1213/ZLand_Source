@@ -24,7 +24,7 @@ public class CamRotate : MonoBehaviour
         mx += mouse_X * rotSpeed * Time.deltaTime;
         my += mouse_Y * rotSpeed * Time.deltaTime;
 
-        my = Mathf.Clamp(my, -15f, 20f);
+        my = Mathf.Clamp(my, -30f, 30f);
 
         transform.eulerAngles = new Vector3(-my, player.transform.eulerAngles.y, 0);
     }
