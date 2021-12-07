@@ -395,8 +395,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -94, y: -145.12999}
-  m_SizeDelta: {x: 186.9741, y: 87.4226}
+  m_AnchoredPosition: {x: -87, y: -138.84}
+  m_SizeDelta: {x: 85.9691, y: 122.46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &268908961
 MonoBehaviour:
@@ -418,7 +418,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300040, guid: 5163ae49a0de665458bba61cd20c99b1, type: 3}
+  m_Sprite: {fileID: 21300020, guid: 5163ae49a0de665458bba61cd20c99b1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -747,7 +747,7 @@ GameObject:
   - component: {fileID: 400138887}
   - component: {fileID: 400138886}
   m_Layer: 0
-  m_Name: T&B Panel
+  m_Name: G&B Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1542,18 +1542,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: cd44d5f49d5887b47ae3046903353e33, type: 3}
-    m_FontSize: 50
+    m_FontSize: 0
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 96
+    m_MaxSize: 54
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD3EC\uD0D1 & \uBC29\uC5B4\uBCBD"
+  m_Text: "\uC218\uB958\uD0C4 & \uBC29\uC5B4\uBCBD"
 --- !u!222 &783395093
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2231,7 +2231,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD3EC\uD0D1"
+  m_Text: "\uC218\uB958\uD0C4"
 --- !u!222 &1213367325
 CanvasRenderer:
   m_ObjectHideFlags: 0
