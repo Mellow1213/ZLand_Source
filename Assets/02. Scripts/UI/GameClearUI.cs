@@ -1,28 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameOverUI : MonoBehaviour
+public class GameClearUI : MonoBehaviour
 {
-    Health health;
+
     GameObject flag;
+    Text k;
+    bool t;
+    EventManager kill;
 
     // Start is called before the first frame update
     void Start()
     {
-        flag = GameObject.Find("GameOver Canvas");
+        kill = GameObject.Find("PlayerEvent").GetComponent<EventManager>();
+        flag = GameObject.Find("Clear Canvas");
         flag.gameObject.SetActive(false);
-        health = GameObject.Find("Player").GetComponent<Health>();
+        t = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(health.health == 0){
+        if (t == true) {
             flag.gameObject.SetActive(true);
-            Time.timeScale = 0;
+            k = GameObject.Find("kill").GetComponent<Text>();
         }
+
+        k.text = "Kill: "+ kill.kill.ToString();
     }
 
     public void OnClickRestart()

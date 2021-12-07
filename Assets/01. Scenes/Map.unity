@@ -596,7 +596,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1189808938}
-        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameClearUI, Assembly-CSharp
         m_MethodName: OnClickRestart
         m_Mode: 1
         m_Arguments:
@@ -16854,7 +16854,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1189808938}
-        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameClearUI, Assembly-CSharp
         m_MethodName: OnClickQuit
         m_Mode: 1
         m_Arguments:
@@ -41487,7 +41487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1189808938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41497,7 +41497,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1189808937}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11f18c868a5ca3243ba6f38a9e598796, type: 3}
+  m_Script: {fileID: 11500000, guid: 253bc7d633e19774181dba3fd6d5bca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1189808939
@@ -58796,7 +58796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1658983385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76398,7 +76398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15945018152eebf4b97cc2942a444bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 10
 --- !u!143 &7381595177433126793
 CharacterController:
   m_ObjectHideFlags: 0
