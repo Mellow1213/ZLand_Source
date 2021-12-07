@@ -13,6 +13,8 @@ public class MainMenuUI : MonoBehaviour
     {
         flag = GameObject.Find("How UI");
         flag.gameObject.SetActive(false);
+        AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.Play();
     }
 
     // Update is called once per frame
