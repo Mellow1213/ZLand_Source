@@ -5,7 +5,7 @@ using UnityEngine;
 public class MaterialCs : MonoBehaviour
 {
     GameObject player;
-
+    GameObject realPlayer;
     bool canLoot;
     bool isHandle;
     // Start is called before the first frame update
@@ -13,20 +13,20 @@ public class MaterialCs : MonoBehaviour
     {
         isHandle = false;
         player = GameObject.Find("Main Camera");
+        realPlayer = GameObject.Find("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Vector3.Distance(player.transform.position, transform.position));
         if (Vector3.Distance(player.transform.position, transform.position) <= 10f)
             canLoot = true;
         else
             canLoot = false;
 
-        if(canLoot && Input.GetKeyDown(KeyCode.Q) && isSee())
+        if(canLoot && Input.GetKeyDown(KeyCode.Q) && isSee()            )
         {
-            if (!isHandle)
+            if (!isHandle && !realPlayer.GetComponent<PlayerHandle>().handFull)
                 Loot();
             else
                 UnLoot();
@@ -35,6 +35,7 @@ public class MaterialCs : MonoBehaviour
 
     void Loot()
     {
+        realPlayer.GetComponent<PlayerHandle>().handFull = true;
         GetComponent<Rigidbody>().isKinematic = true;
         isHandle = true;
         transform.SetParent(player.transform);
@@ -42,6 +43,7 @@ public class MaterialCs : MonoBehaviour
 
     void UnLoot()
     {
+        realPlayer.GetComponent<PlayerHandle>().handFull = false;
         GetComponent<Rigidbody>().isKinematic = false;
         isHandle = false;
         transform.parent = null;
