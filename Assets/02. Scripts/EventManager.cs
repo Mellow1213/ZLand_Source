@@ -10,7 +10,7 @@ public class EventManager : MonoBehaviour
 
     public int score;
     public int kill;
-    float finalTimer;
+    [HideInInspector] public float finalTimer;
 
     public GameObject Wave;
 
@@ -35,7 +35,6 @@ public class EventManager : MonoBehaviour
 
     void ZombieManage()
     {
-        Debug.Log("Zombies : "+GameObject.FindGameObjectsWithTag("Enemy").Length);
         if (GameObject.FindGameObjectsWithTag("Enemy").Length > 15)
             Destroy(GameObject.FindGameObjectsWithTag("Enemy")[0]);
     }

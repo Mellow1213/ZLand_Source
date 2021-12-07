@@ -22,11 +22,12 @@ public class PlayerFire : MonoBehaviour
     [HideInInspector] public float fireCooltime; // 발사 사이 딜레이 (= 연사속도)
     [HideInInspector] public int bullet; // 남은 총알 갯수
     bool out_of_bullet; // 장전 필요성 판단
-
+    EventManager score;
 
     // Start is called before the first frame update
     void Start()
     {
+        score = GameObject.Find("PlayerEvent").GetComponent<EventManager>();
         ps = bulletEffect.GetComponentInChildren<ParticleSystem>();
         out_of_bullet = false;
         bullet = 30;
@@ -44,8 +45,9 @@ public class PlayerFire : MonoBehaviour
     }
     void Bomb()
     {
-        if (Input.GetKeyDown(KeyCode.E) && bombcnt > 0)
+        if (Input.GetKeyDown(KeyCode.E) && score.score >= 5)
         {
+            score.score -= 5;
             bombcnt--;
             GameObject bomb = Instantiate(bombFactory);
             bomb.transform.position = bombPos.transform.position;

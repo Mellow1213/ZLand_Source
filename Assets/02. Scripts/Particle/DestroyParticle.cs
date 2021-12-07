@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class DestroyParticle : MonoBehaviour {
 
-    [SerializeField] float WaitForSeconds = 1f;
+    [SerializeField] float WaitForSeconds;
 	public bool isBomb;
 
 
 	// Update is called once per frame
 	void Update () {
-        Destroy(gameObject, WaitForSeconds);		
+		Debug.Log(WaitForSeconds);
+		WaitForSeconds -= Time.deltaTime;
+		if(WaitForSeconds <= 0)
+			Destroy(gameObject, WaitForSeconds);		
 	}
 
 	void OnTriggerEnter(Collider other)
