@@ -10,6 +10,8 @@ public class EnemyMovement : MonoBehaviour
     public float attack_cooltime;
     float timer;
 
+    Health health;
+
     bool isAttack;
     Animator ani;
     // Start is called before the first frame update
@@ -21,55 +23,59 @@ public class EnemyMovement : MonoBehaviour
         isAttack = false;
 
         target = GameObject.Find("Player");
+        health = GameObject.Find("Player").GetComponent<Health>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (target.gameObject.tag == "Player")
+        if (health.health != 0)
         {
-            if (Vector3.Distance(transform.position, target.transform.position) > 3.5f)
+            if (target.gameObject.tag == "Player")
             {
-                agent.destination = target.transform.position;
-            }
-            else
-            {
-                agent.destination = transform.position;
-            }
-
-            if (gameObject.name != "Skull")
-            {
-                if (Vector3.Distance(transform.position, target.transform.position) < 5f)
+                if (Vector3.Distance(transform.position, target.transform.position) > 3.5f)
                 {
-                    ani.SetBool("isAttack", true);
-                    Attack();
+                    agent.destination = target.transform.position;
                 }
                 else
-                    ani.SetBool("isAttack", false);
-
-            }
-            else
-            {
-                if (Vector3.Distance(transform.position, target.transform.position) < 5f)
                 {
-                    GetComponent<Animation>().Play("attack");
-                    Attack();
+                    agent.destination = transform.position;
+                }
+
+                if (gameObject.name != "Skull")
+                {
+                    if (Vector3.Distance(transform.position, target.transform.position) < 5f)
+                    {
+                        ani.SetBool("isAttack", true);
+                        Attack();
+                    }
+                    else
+                        ani.SetBool("isAttack", false);
+
                 }
                 else
-                    GetComponent<Animation>().Play("run");
+                {
+                    if (Vector3.Distance(transform.position, target.transform.position) < 5f)
+                    {
+                        GetComponent<Animation>().Play("attack");
+                        Attack();
+                    }
+                    else
+                        GetComponent<Animation>().Play("run");
+
+                }
 
             }
-
-        }
-        void Attack()
-        {
-            timer -= Time.deltaTime;
-            if (timer <= 0)
+            void Attack()
             {
-                target.gameObject.GetComponent<Health>().health -= damage;
-                timer = attack_cooltime;
-                agent.enabled = false;
+                timer -= Time.deltaTime;
+                if (timer <= 0)
+                {
+                    target.gameObject.GetComponent<Health>().health -= damage;
+                    timer = attack_cooltime;
+                    agent.enabled = false;
+                }
+
             }
 
         }

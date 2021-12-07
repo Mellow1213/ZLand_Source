@@ -595,7 +595,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1189808938}
+      - m_Target: {fileID: 1507977003}
         m_TargetAssemblyTypeName: GameClearUI, Assembly-CSharp
         m_MethodName: OnClickRestart
         m_Mode: 1
@@ -16561,9 +16561,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1658983385}
-        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
-        m_MethodName: OnClickQuit
+      - m_Target: {fileID: 1507977004}
+        m_TargetAssemblyTypeName: GameOverUI, Assembly-CSharp
+        m_MethodName: OnClickRestart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16853,7 +16853,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1189808938}
+      - m_Target: {fileID: 1507977003}
         m_TargetAssemblyTypeName: GameClearUI, Assembly-CSharp
         m_MethodName: OnClickQuit
         m_Mode: 1
@@ -28494,7 +28494,7 @@ Transform:
   m_LocalScale: {x: 15, y: 0.5, z: 15}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &779244659
 MonoBehaviour:
@@ -41480,7 +41480,6 @@ GameObject:
   - component: {fileID: 1189808941}
   - component: {fileID: 1189808940}
   - component: {fileID: 1189808939}
-  - component: {fileID: 1189808938}
   m_Layer: 0
   m_Name: Clear Canvas
   m_TagString: Untagged
@@ -41488,18 +41487,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1189808938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189808937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 253bc7d633e19774181dba3fd6d5bca2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1189808939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41568,23 +41555,23 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1189808937}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1632087287}
   - {fileID: 787787255}
   - {fileID: 1661104503}
   - {fileID: 17253074}
   - {fileID: 494467607}
-  m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_Father: {fileID: 1507977002}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 960, y: 540}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1192302388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45612,8 +45599,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1658983385}
-        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+      - m_Target: {fileID: 1507977004}
+        m_TargetAssemblyTypeName: GameOverUI, Assembly-CSharp
         m_MethodName: OnClickRestart
         m_Mode: 1
         m_Arguments:
@@ -53161,6 +53148,8 @@ GameObject:
   - component: {fileID: 1507976999}
   - component: {fileID: 1507976998}
   - component: {fileID: 1507976997}
+  - component: {fileID: 1507977004}
+  - component: {fileID: 1507977003}
   m_Layer: 5
   m_Name: HUD Canvas
   m_TagString: Untagged
@@ -53285,6 +53274,8 @@ RectTransform:
   - {fileID: 540846324}
   - {fileID: 1498217596}
   - {fileID: 1890264401}
+  - {fileID: 1658983389}
+  - {fileID: 1189808942}
   m_Father: {fileID: 0}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -53293,6 +53284,30 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1507977003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507976996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253bc7d633e19774181dba3fd6d5bca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1507977004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507976996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11f18c868a5ca3243ba6f38a9e598796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1509929614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58789,7 +58804,6 @@ GameObject:
   - component: {fileID: 1658983388}
   - component: {fileID: 1658983387}
   - component: {fileID: 1658983386}
-  - component: {fileID: 1658983385}
   m_Layer: 0
   m_Name: GameOver Canvas
   m_TagString: Untagged
@@ -58797,18 +58811,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1658983385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658983384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11f18c868a5ca3243ba6f38a9e598796, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1658983386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58877,22 +58879,22 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658983384}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1283003640}
   - {fileID: 1686986890}
   - {fileID: 1310505775}
   - {fileID: 488617154}
-  m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_Father: {fileID: 1507977002}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 960, y: 540}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1661104502
 GameObject:
   m_ObjectHideFlags: 0
@@ -68397,7 +68399,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1927814894
 PrefabInstance:
@@ -76398,7 +76400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15945018152eebf4b97cc2942a444bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 100
 --- !u!143 &7381595177433126793
 CharacterController:
   m_ObjectHideFlags: 0
@@ -76499,7 +76501,7 @@ Transform:
   - {fileID: 7381595175995637179}
   - {fileID: 1546078161}
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 50, z: 0}
 --- !u!114 &7381595177433126799
 MonoBehaviour:

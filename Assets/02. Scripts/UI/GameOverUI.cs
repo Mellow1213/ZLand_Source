@@ -28,7 +28,7 @@ public class GameOverUI : MonoBehaviour
     public void OnClickRestart()
     {
         Debug.Log("재시작");
-        SceneManager.LoadScene("In_game_UI"); //씬 전환
+        SceneManager.LoadScene("Map"); //씬 전환
     }
 
     public void OnClickQuit()

@@ -27,6 +27,7 @@ public class GameClearUI : MonoBehaviour
         if (t == true) {
             flag.gameObject.SetActive(true);
             k = GameObject.Find("kill").GetComponent<Text>();
+            Time.timeScale = 0;
         }
 
         k.text = "Kill: "+ kill.kill.ToString();
@@ -35,7 +36,7 @@ public class GameClearUI : MonoBehaviour
     public void OnClickRestart()
     {
         Debug.Log("¿ÁΩ√¿€");
-        SceneManager.LoadScene("In_game_UI"); //æ¿ ¿¸»Ø
+        SceneManager.LoadScene("Map"); //æ¿ ¿¸»Ø
     }
 
     public void OnClickQuit()
