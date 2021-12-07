@@ -24,20 +24,6 @@ public class Ingame_EscUI : MonoBehaviour
         }
     }
 
-    public void OnClickTurret()
-    {
-        Debug.Log("터렛");
-        tFlag.gameObject.SetActive(true);
-    }
-
-    public void OnClickUpgrade()
-    {
-        Debug.Log("업그레이드");
-        if (score.score >= 5) {
-            score.score = score.score - 5;
-        }
-    }
-
     public void OnClickBack()
     {
         Debug.Log("x");
