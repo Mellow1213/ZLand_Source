@@ -10,9 +10,16 @@ public class EventManager : MonoBehaviour
 
     public int score;
     public int kill;
+    float finalTimer;
+
+    public GameObject Wave;
+
+    public bool gameEnd;
     // Start is called before the first frame update
     void Start()
     {
+        gameEnd = false;
+        finalTimer = 0;
         score = 0;
         kill = 0;
         dontDestroy = false;
@@ -52,8 +59,12 @@ public class EventManager : MonoBehaviour
         if (dontDestroy)
         {
             if (Route2 == Route1)
-                Debug.Log("°ÔÀÓ ³¡");
-            Debug.Log(Route2 == Route1);
+            {
+                Wave.SetActive(true);
+                finalTimer += Time.deltaTime;
+                gameEnd = (finalTimer >= 60);
+                Debug.Log("finalTimer : " + finalTimer + ", gameEnd : " + gameEnd);
+            }
         }
     }
 
