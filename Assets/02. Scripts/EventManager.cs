@@ -7,9 +7,14 @@ public class EventManager : MonoBehaviour
     int Route1;
     int Route2;
     bool dontDestroy;
+
+    public int score;
+    public int kill;
     // Start is called before the first frame update
     void Start()
     {
+        score = 0;
+        kill = 0;
         dontDestroy = false;
     }
 

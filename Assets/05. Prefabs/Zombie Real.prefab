@@ -31,6 +31,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+--- !u!114 &3467063578823750484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2565723502197538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15945018152eebf4b97cc2942a444bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
 --- !u!1001 &4301464947931754367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104,7 +117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 424839881565853659, guid: 4829ada4219d6e04c8b3db38c8e4498b, type: 3}
       propertyPath: m_Name
-      value: Zombie
+      value: Zombie Real
       objectReference: {fileID: 0}
     - target: {fileID: 424839881565853659, guid: 4829ada4219d6e04c8b3db38c8e4498b, type: 3}
       propertyPath: m_IsActive
