@@ -10,6 +10,8 @@ public class PlayerFire : MonoBehaviour
     public float damage;
 
     public float throwPower = 15f;
+    [HideInInspector] public int bombcnt = 5;
+
 
     public GameObject bombPos;
     public GameObject bombFactory;
@@ -42,8 +44,9 @@ public class PlayerFire : MonoBehaviour
     }
     void Bomb()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && bombcnt > 0)
         {
+            bombcnt--;
             GameObject bomb = Instantiate(bombFactory);
             bomb.transform.position = bombPos.transform.position;
 
