@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
+    int Route1;
+    int Route2;
+    bool dontDestroy;
     // Start is called before the first frame update
     void Start()
     {
-        
+        dontDestroy = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Cursors();
+
+        MaterialManage();
+    }
+
+    void Cursors()
+    {
+
         Cursor.lockState = CursorLockMode.Confined;
         if (Input.GetKey(KeyCode.LeftAlt))
         {
@@ -24,5 +35,31 @@ public class EventManager : MonoBehaviour
             Time.timeScale = 1;
             Cursor.visible = false;
         }
+    }
+
+    void MaterialManage()
+    {
+        Route1 = GameObject.FindGameObjectsWithTag("Route1").Length;
+        Route2 = GameObject.FindGameObjectsWithTag("Route2").Length;
+        if ((Route1 != 6 || Route2 != 6) && !dontDestroy)
+            RouteManage();
+
+        if (dontDestroy)
+        {
+            if (Route2 == Route1)
+                Debug.Log("∞‘¿” ≥°");
+            Debug.Log(Route2 == Route1);
+        }
+    }
+
+    void RouteManage()
+    {
+        if (Route1 != 6)
+            for (int i = 0; i < Route2; i++)
+                Destroy(GameObject.FindGameObjectsWithTag("Route2")[i]);
+        if (Route2 != 6)
+            for (int i = 0; i < Route1; i++)
+                Destroy(GameObject.FindGameObjectsWithTag("Route1")[i]);
+        dontDestroy = true;
     }
 }
