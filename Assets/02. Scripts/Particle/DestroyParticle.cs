@@ -10,7 +10,6 @@ public class DestroyParticle : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		Debug.Log(WaitForSeconds);
 		WaitForSeconds -= Time.deltaTime;
 		if(WaitForSeconds <= 0)
 			Destroy(gameObject, WaitForSeconds);		

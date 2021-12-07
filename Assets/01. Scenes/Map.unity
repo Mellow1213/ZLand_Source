@@ -69400,6 +69400,8 @@ GameObject:
   - component: {fileID: 1924738678}
   - component: {fileID: 1924738677}
   - component: {fileID: 1924738680}
+  - component: {fileID: 1924738681}
+  - component: {fileID: 1924738682}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -69467,6 +69469,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff5daf9437149d42ba5e43c97827a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1924738681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924738676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd2b751e50d51549a498f1cc342df59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1924738682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924738676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e55511d21a1a984b91e84aa08949a6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PauseUI: {fileID: 1890264400}
 --- !u!1001 &1927814894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77566,6 +77593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 10
   kill: 0
+  finalTimer: 0
   Wave: {fileID: 955758106}
   gameEnd: 0
 --- !u!1 &7381595177953196469
