@@ -23,19 +23,21 @@ public class IngameUI : MonoBehaviour
 
     Text gunNum, by, hp, ammo;
 
-    int gunN;
+    int gunN, ammoN;
     GameObject gunIcon;
     public Sprite gun1, gun2;
-
+    PlayerFire playerfire;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        playerfire = GameObject.Find("Player").GetComponent<PlayerFire>();
 
         gunN = 1;
         gunIcon = GameObject.Find("Gun Icon");
         gunIcon.GetComponent<Image>().sprite = gun1;
+
 
         gunNum = GameObject.Find("Gun Num").GetComponent<Text>();
         by = GameObject.Find("By-Products").GetComponent<Text>();
@@ -67,7 +69,7 @@ public class IngameUI : MonoBehaviour
         t2.text = bitem[1].name = "줄";
         t3.text = bitem[2].name = "나무 판자";
         t4.text = bitem[3].name = "천";
-        t5.text = bitem[4].name = "나무통";
+        t5.text = bitem[4].name = "나무 막대";
         t6.text = bitem[5].name = "노";
 
         citem[0].name = "못";
@@ -89,12 +91,16 @@ public class IngameUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        ammoN = playerfire.bullet;
+        ammo.text = ammoN.ToString() + "/30";
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             gunN = 1;
             gunNum.text = gunN.ToString();
             gunIcon.GetComponent<Image>().sprite = gun1;
-            //gunIcon.sprite = Resources.Load<Sprite>("FPS Icons Pack/LT Automatic rifle 4");
+            
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -102,7 +108,7 @@ public class IngameUI : MonoBehaviour
             gunN = 2;
             gunNum.text = gunN.ToString();
             gunIcon.GetComponent<Image>().sprite = gun2;
-            //gunIcon.sprite = Resources.Load<Sprite>("FPS Icons Pack/LT Automatic rifle 3");
+            
         }
     }
 

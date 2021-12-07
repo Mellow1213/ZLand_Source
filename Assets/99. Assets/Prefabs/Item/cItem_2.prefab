@@ -173,7 +173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 83743413293810332}
   m_Layer: 0
-  m_Name: Radio
+  m_Name: cItem_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

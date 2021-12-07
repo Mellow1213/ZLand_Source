@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 4776315076849560438}
   - component: {fileID: 4648778309422540572}
   m_Layer: 0
-  m_Name: RopeSlackLength
+  m_Name: bItem_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2662888377606038896}
   - component: {fileID: 2662888377594439550}
   m_Layer: 0
-  m_Name: Arnis
+  m_Name: bItem_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
