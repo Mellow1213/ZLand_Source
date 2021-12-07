@@ -20,7 +20,7 @@ public class EnemyMovement : MonoBehaviour
         ani = GetComponent<Animator>();
         isAttack = false;
 
-        target = GameObject.Find("Soldier_demo");
+        target = GameObject.Find("Player");
     }
 
     // Update is called once per frame
