@@ -5,16 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class GameOverUI : MonoBehaviour
 {
+    Health health;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.gameObject.SetActive(false);
+        health = GameObject.Find("Player").GetComponent<Health>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (health.health == 0)
+        {
+            this.gameObject.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     public void OnClickRestart()

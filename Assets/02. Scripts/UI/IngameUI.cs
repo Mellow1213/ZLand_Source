@@ -27,12 +27,16 @@ public class IngameUI : MonoBehaviour
     GameObject gunIcon;
     public Sprite gun1, gun2;
     PlayerFire playerfire;
+    Health health;
+    EventManager score;
 
 
     // Start is called before the first frame update
     void Start()
     {
         playerfire = GameObject.Find("Player").GetComponent<PlayerFire>();
+        health= GameObject.Find("Player").GetComponent<Health>();
+        score = GameObject.Find("PlayerEvent").GetComponent<EventManager>();
 
         gunN = 1;
         gunIcon = GameObject.Find("Gun Icon");
@@ -94,6 +98,9 @@ public class IngameUI : MonoBehaviour
 
         ammoN = playerfire.bullet;
         ammo.text = ammoN.ToString() + "/30";
+        hp.text = "HP "+ health.health.ToString("N0") + "/100";
+
+        by.text = score.score.ToString();
 
         /* if (Input.GetKeyDown(KeyCode.Alpha1))
         {

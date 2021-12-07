@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Ev = GameObject.Find("PlayerEvent_");
+        Ev = GameObject.Find("PlayerEvent");
     }
 
     // Update is called once per frame
