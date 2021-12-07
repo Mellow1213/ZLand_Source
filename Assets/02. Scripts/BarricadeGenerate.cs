@@ -26,16 +26,16 @@ public class BarricadeGenerate : MonoBehaviour
             Destroy(f);
             barriCount--;
         }
-    }
-
-    public void OnclickBarricade() {
-        if (score.score > 0)
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            GameObject player = GameObject.FindWithTag("Player");
-            GameObject barri = Instantiate(prefab) as GameObject;
-            barri.transform.position = player.transform.position;
-            barriCount++;
-            score.score--;
+            if (score.score > 0)
+            {
+                GameObject player = GameObject.FindWithTag("Player");
+                GameObject barri = Instantiate(prefab) as GameObject;
+                barri.transform.position = player.transform.position;
+                barriCount++;
+                score.score--;
+            }
         }
     }
 }
