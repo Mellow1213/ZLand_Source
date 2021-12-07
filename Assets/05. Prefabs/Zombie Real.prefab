@@ -53,7 +53,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 424839881549899812, guid: 4829ada4219d6e04c8b3db38c8e4498b, type: 3}
       propertyPath: m_Constraints
-      value: 126
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 424839881549899812, guid: 4829ada4219d6e04c8b3db38c8e4498b, type: 3}
       propertyPath: m_IsKinematic
@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 424839881549899815, guid: 4829ada4219d6e04c8b3db38c8e4498b, type: 3}
       propertyPath: m_Speed
-      value: 4
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 424839881565853658, guid: 4829ada4219d6e04c8b3db38c8e4498b, type: 3}
       propertyPath: m_RootOrder

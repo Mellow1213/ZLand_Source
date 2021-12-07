@@ -28,7 +28,7 @@ public class ttt : MonoBehaviour
             player = GameObject.Find("Player");
 
             Debug.Log(v);
-            cc.Move(v * Time.deltaTime / 2);
+            cc.Move(v.normalized * Time.deltaTime*10f);
         }
     }
 }
