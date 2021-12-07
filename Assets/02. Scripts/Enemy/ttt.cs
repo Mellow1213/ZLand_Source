@@ -27,7 +27,6 @@ public class ttt : MonoBehaviour
             cc = GetComponent<CharacterController>();
             player = GameObject.Find("Player");
 
-            Debug.Log(v);
             cc.Move(v.normalized * Time.deltaTime*10f);
         }
     }

@@ -22,7 +22,5 @@ public class Health : MonoBehaviour
             Ev.GetComponent<EventManager>().kill++;
             Ev.GetComponent<EventManager>().score++; 
         }
-        if (gameObject.name == "Player")
-            Debug.Log(health);
     }
 }

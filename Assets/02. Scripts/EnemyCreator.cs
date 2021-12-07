@@ -18,7 +18,6 @@ public class EnemyCreator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("timer = " + timer);
         timer += Time.deltaTime;
         if(timer >= spawnTime)
         {
