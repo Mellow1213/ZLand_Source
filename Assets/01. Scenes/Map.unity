@@ -18497,7 +18497,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1507976997}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Ingame_EscUI, Assembly-CSharp
         m_MethodName: OnClickBack
         m_Mode: 1
@@ -53964,7 +53964,6 @@ GameObject:
   - component: {fileID: 1507977000}
   - component: {fileID: 1507976999}
   - component: {fileID: 1507976998}
-  - component: {fileID: 1507976997}
   - component: {fileID: 1507977004}
   - component: {fileID: 1507977003}
   - component: {fileID: 1507977005}
@@ -53975,18 +53974,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1507976997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1507976996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c635aab41c75bc641b0618a03050e502, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1507976998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54141,8 +54128,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseUI: {fileID: 1890264400}
-  Over: {fileID: 1658983384}
-  Clear: {fileID: 1189808937}
 --- !u!1001 &1509929614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69535,8 +69520,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseUI: {fileID: 1890264400}
-  Over: {fileID: 0}
-  Clear: {fileID: 0}
 --- !u!1001 &1927814894
 PrefabInstance:
   m_ObjectHideFlags: 0

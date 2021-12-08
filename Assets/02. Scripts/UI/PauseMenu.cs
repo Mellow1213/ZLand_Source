@@ -5,24 +5,36 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject PauseUI, Over, Clear;
+    public GameObject PauseUI;
     bool paused = false;
+
+    Health health;
+    EventManager end;
 
     // Start is called before the first frame update
     void Start()
     {
         PauseUI.SetActive(false);
+        health = GameObject.Find("Player").GetComponent<Health>();
+        end = GameObject.Find("PlayerEvent").GetComponent<EventManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // 그냥 화면에 UI가 활성화 되어있을 때 
-        // timeScale을 0으로 하고 비활성화일 때 1로 하면 될 것 같아요
-        // UI 관련은 건드리기 애매해서 주석만 달아놓습니당
         if (Input.GetKeyDown(KeyCode.Escape)) {
             paused = !paused;
         }
+
+        if (health.health <= 0)
+        {
+            paused = false;
+        }
+
+        if (end.gameEnd == true) {
+            paused = true;
+        }
+
         if (paused) {
             PauseUI.SetActive(true);
             Time.timeScale = 0;
