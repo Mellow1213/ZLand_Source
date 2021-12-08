@@ -45,12 +45,10 @@ public class EventManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         if (Input.GetKey(KeyCode.LeftAlt))
         {
-            Time.timeScale = 0;
             Cursor.visible = true;
         }
         else
         {
-            Time.timeScale = 1;
             Cursor.visible = false;
         }
     }

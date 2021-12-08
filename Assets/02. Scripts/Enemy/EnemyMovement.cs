@@ -29,7 +29,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health.health != 0)
+        if (health.health > 0)
         {
             if (target.gameObject.tag == "Player")
             {

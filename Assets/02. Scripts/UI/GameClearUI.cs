@@ -28,7 +28,6 @@ public class GameClearUI : MonoBehaviour
             flag.gameObject.SetActive(true);
             k = GameObject.Find("kill").GetComponent<Text>();
             k.text = "Kill: " + kill.kill.ToString();
-            Time.timeScale = 0;
         }
     }
 

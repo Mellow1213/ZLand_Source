@@ -23,7 +23,7 @@ public class MaterialCs : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health.health != 0)
+        if (health.health > 0)
         {
             if (Vector3.Distance(player.transform.position, transform.position) <= 10f)
                 canLoot = true;

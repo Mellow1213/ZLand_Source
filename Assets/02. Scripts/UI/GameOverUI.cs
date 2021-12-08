@@ -19,9 +19,9 @@ public class GameOverUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health.health == 0){
+        if (health.health <= 0)
+        {
             flag.gameObject.SetActive(true);
-            Time.timeScale = 0;
         }
     }
 

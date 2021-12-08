@@ -19,7 +19,7 @@ public class ttt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health.health != 0)
+        if (health.health > 0)
         {
             transform.LookAt(player.transform.position);
             Vector3 v = player.transform.position - transform.position;

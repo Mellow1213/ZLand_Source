@@ -99,7 +99,7 @@ public class IngameUI : MonoBehaviour
         if (wave.activeSelf == true)
         {
             count.gameObject.SetActive(true);
-            c.text = fTime.finalTimer.ToString("N2");
+            c.text = fTime.finalTimer.ToString("N0");
         }
 
     }

@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject PauseUI;
-    private bool paused = false;
+    public GameObject PauseUI, Over, Clear;
+    bool paused = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,10 +27,15 @@ public class PauseMenu : MonoBehaviour
             PauseUI.SetActive(true);
             Time.timeScale = 0;
         }
-
         if (!paused) {
             PauseUI.SetActive(false);
             Time.timeScale = 1f;
         }
+    }
+
+        public void OnClickMain()
+    {
+        Debug.Log("메인화면으로");
+        SceneManager.LoadScene("Main_Title");
     }
 }
