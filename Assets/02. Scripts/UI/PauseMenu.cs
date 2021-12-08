@@ -26,12 +26,7 @@ public class PauseMenu : MonoBehaviour
             paused = !paused;
         }
 
-        if (health.health <= 0)
-        {
-            paused = false;
-        }
-
-        if (end.gameEnd == true) {
+        if (health.health <= 0 || end.gameEnd == true) {
             paused = true;
         }
 
