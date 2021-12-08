@@ -15,18 +15,23 @@ public class IngameUI : MonoBehaviour
     Item[] bitem = new Item[6];
     Item[] citem = new Item[6];
 
-    public Text t1, t2, t3, t4, t5, t6;
+    public Text t1, t2, t3, t4, t5, t6, c;
 
     Text gunNum, by, hp, ammo;
 
     public Slider hpBar;
 
     int gunN, ammoN;
-    GameObject gunIcon;
-    public Sprite gun1, gun2;
+
+    GameObject gunIcon, count;
+    public GameObject wave;
+
+    public Sprite gun;
+
     PlayerFire playerfire;
     Health health;
     EventManager score;
+    EventManager fTime;
 
 
     // Start is called before the first frame update
@@ -35,10 +40,14 @@ public class IngameUI : MonoBehaviour
         playerfire = GameObject.Find("Player").GetComponent<PlayerFire>();
         health= GameObject.Find("Player").GetComponent<Health>();
         score = GameObject.Find("PlayerEvent").GetComponent<EventManager>();
+        fTime = GameObject.Find("PlayerEvent").GetComponent<EventManager>();
+        count = GameObject.Find("Count");
+        
+        count.gameObject.SetActive(false);
 
         gunN = 1;
         gunIcon = GameObject.Find("Gun Icon");
-        gunIcon.GetComponent<Image>().sprite = gun1;
+        gunIcon.GetComponent<Image>().sprite = gun;
 
 
         gunNum = GameObject.Find("Gun Num").GetComponent<Text>();
@@ -86,6 +95,12 @@ public class IngameUI : MonoBehaviour
         by.text = score.score.ToString();
 
         hpBar.value = (float)health.health / 100;
+
+        if (wave.activeSelf == true)
+        {
+            count.gameObject.SetActive(true);
+            c.text = fTime.finalTimer.ToString("N2");
+        }
 
     }
 
